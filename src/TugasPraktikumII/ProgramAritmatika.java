@@ -40,6 +40,8 @@ b4.setVisible(false);
 
         pilihan = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         panel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         ket = new javax.swing.JTextField();
@@ -55,20 +57,31 @@ b4.setVisible(false);
         b4 = new javax.swing.JTextField();
         button = new javax.swing.JButton();
         thasil = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 0));
         getContentPane().setLayout(null);
 
         pilihan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Penjumlahan", "Pengurangan", "Pembagian", "Perkalian" }));
+        pilihan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pilihanActionPerformed(evt);
+            }
+        });
         getContentPane().add(pilihan);
         pilihan.setBounds(212, 106, 141, 32);
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setForeground(new java.awt.Color(153, 204, 0));
         jPanel1.setLayout(null);
+
+        jLabel4.setText("PROGRAM ARITMATIKA");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(170, 30, 220, 40);
+
+        jLabel5.setText("Jenis Aritmatika");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(50, 110, 150, 30);
 
         panel.setBackground(new java.awt.Color(0, 153, 153));
         panel.setLayout(null);
@@ -130,45 +143,13 @@ b4.setVisible(false);
         jPanel1.add(panel);
         panel.setBounds(50, 180, 460, 470);
 
-        jLabel2.setText("Jenis Aritmatika");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(40, 110, 155, 30);
-
-        jLabel1.setText("PROGRAM ARITMATIKA");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(160, 20, 190, 36);
-
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 850, 602);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-     private void jenisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jenisActionPerformed
-        setJenis();
-}
-      public void setJenis(){
-        if(pilihan.getSelectedItem().equals("Penjumlahan")){
-            jns="Penjumlahan";
-            ket.setText("Penjumlahan");
-            panel.setVisible(true);
-            pilihanbil.setVisible(true);
-        } else if(pilihan.getSelectedItem().equals("Pengurangan")){
-            jns="Pengurangan";
-            ket.setText("Pengurangan");
-            panel.setVisible(true);
-            pilihanbil.setVisible(true);
-        } else if(pilihan.getSelectedItem().equals("Pembagian")){
-            jns="Pembagian";
-            ket.setText("Pembagian");
-            panel.setVisible(true);
-            pilihanbil.setVisible(true);
-        } else if(pilihan.getSelectedItem().equals("Perkalian")){
-            jns="Perkalian";
-            ket.setText("Perkalian");
-            panel.setVisible(true);
-            pilihanbil.setVisible(true);
-        }
-}
+
+      
     
     private void pilihanbilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihanbilActionPerformed
         getJumlah();
@@ -252,7 +233,7 @@ public void getJumlah(){
             if(jml==4){
                 hsl=a1/a2/a3/a4;
                 thasil.setText(a1+" / "+a2+" / "+a3+" / "+a4+" = "+hsl);
-                
+            }   
             } else if(jns.equals("Perkalian")){
             if(jml==2){
                 hsl=a1*a2;
@@ -268,7 +249,35 @@ public void getJumlah(){
 }
     }//GEN-LAST:event_buttonActionPerformed
         }
-    }
+        
+    private void pilihanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihanActionPerformed
+        // TODO add your handling code here:
+        setJenis();
+    }//GEN-LAST:event_pilihanActionPerformed
+
+    public void setJenis(){
+        if(pilihan.getSelectedItem().equals("Penjumlahan")){
+            jns="Penjumlahan";
+            ket.setText("Penjumlahan");
+            panel.setVisible(true);
+            pilihanbil.setVisible(true);
+        } else if(pilihan.getSelectedItem().equals("Pengurangan")){
+            jns="Pengurangan";
+            ket.setText("Pengurangan");
+            panel.setVisible(true);
+            pilihanbil.setVisible(true);
+        } else if(pilihan.getSelectedItem().equals("Pembagian")){
+            jns="Pembagian";
+            ket.setText("Pembagian");
+            panel.setVisible(true);
+            pilihanbil.setVisible(true);
+        } else if(pilihan.getSelectedItem().equals("Perkalian")){
+            jns="Perkalian";
+            ket.setText("Perkalian");
+            panel.setVisible(true);
+            pilihanbil.setVisible(true);
+        }
+}
     /**
      * @param args the command line arguments
      */
@@ -314,9 +323,9 @@ public void getJumlah(){
     private javax.swing.JLabel bil3;
     private javax.swing.JLabel bil4;
     private javax.swing.JButton button;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField ket;
